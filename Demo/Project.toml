@@ -1,0 +1,20 @@
+name = "Demo"
+uuid = "d75446f6-4080-4e88-adc9-7f02d9f9bbee"
+authors = ["Johanni Brea <jbrea@users.noreply.github.com>"]
+version = "0.1.0"
+
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+PlutoPlotly = "8e989ff0-3d88-8e9f-f020-2b208a939ff0"
+PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
+PrecompilePlutoCourse = "031ef55e-ae57-4a95-aa50-04a4c1cc4953"
+
+[compat]
+julia = "^1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
