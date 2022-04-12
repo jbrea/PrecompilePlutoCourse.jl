@@ -12,3 +12,7 @@
 [![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://jbrea.github.io/PrecompilePlutoCourse.jl/stable)
 [![Documentation](https://img.shields.io/badge/docs-master-blue.svg)](https://jbrea.github.io/PrecompilePlutoCourse.jl/dev)
 -->
+
+If you have a course with Pluto notebooks and you would like to ship it with custom sysimages, use this package as shown in the [demo](Demo/src/Demo.jl).
+
+See [MLCourse](https://github.com/jbrea/MLCourse) for another example.
