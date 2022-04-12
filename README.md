@@ -14,5 +14,15 @@
 -->
 
 If you have a course with Pluto notebooks and you would like to ship it with custom sysimages, use this package as shown in the [demo](Demo/src/Demo.jl).
+The user of the `Demo` project will be able to create a custom sysimage with
+```julia
+using Demo
+Demo.create_sysimage()
+```
+and use the custom sysimage with
+```julia
+using Demo
+Demo.start()
+```
 
 See [MLCourse](https://github.com/jbrea/MLCourse) for another example.
