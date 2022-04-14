@@ -35,4 +35,4 @@ pkg> add https://github.com/jbrea/PrecompilePlutoCourse.jl#main
 2. Create and customize a `warmup.jl` file. See [Demo/precompile/warmup.jl](Demo/precompile/warmup.jl) for a minimal example or [this customized warmup file](https://github.com/jbrea/MLCourse/blob/main/precompile/warmup.jl). The `warmup.jl` file will be passed to the `precompile_execution_file` argument of the [PackageCompiler](https://julialang.github.io/PackageCompiler.jl/stable/sysimages.html).
 
 3. Configure `PrecompilePlutoCourse` in the `__init__()` function of your package as e.g.
-   in [Demo/src/Demo.jl](Demo/src/Demo.jl).
+   in [Demo/src/Demo.jl](Demo/src/Demo.jl) or [here](https://github.com/jbrea/MLCourse/blob/main/src/MLCourse.jl#L10).
