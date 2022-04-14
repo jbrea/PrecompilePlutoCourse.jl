@@ -68,7 +68,8 @@ function create_sysimage()
     end
     PackageCompiler.create_sysimage(_CONFIG[].packages;
                                     sysimage_path = _CONFIG[].sysimage_path,
-                                    precompile_execution_file=_CONFIG[].warmup_file)
+                                    precompile_execution_file=_CONFIG[].warmup_file,
+                                    project=_CONFIG[].project_path)
 end
 
 
