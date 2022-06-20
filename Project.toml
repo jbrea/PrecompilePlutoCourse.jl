@@ -12,6 +12,9 @@ Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
 
 [compat]
 julia = "^1"
+Git = "1"
+PackageCompiler = "2"
+Pluto = "0.19"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
