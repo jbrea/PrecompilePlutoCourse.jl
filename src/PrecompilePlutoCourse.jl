@@ -10,6 +10,7 @@ Base.@kwdef struct Configuration
     start_notebook::String = joinpath(project_path, "index.jl")
     warmup_file::String = joinpath(project_path, "precompile", "warmup.jl")
     packages::Vector{Symbol} = []
+    kwargs = NamedTuple()
 end
 
 function assert_config()
@@ -69,7 +70,8 @@ function create_sysimage()
     PackageCompiler.create_sysimage(_CONFIG[].packages;
                                     sysimage_path = _CONFIG[].sysimage_path,
                                     precompile_execution_file=_CONFIG[].warmup_file,
-                                    project=_CONFIG[].project_path)
+                                    project=_CONFIG[].project_path,
+                                    _CONFIG[].kwargs...)
 end
 
 

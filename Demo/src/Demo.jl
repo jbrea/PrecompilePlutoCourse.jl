@@ -4,7 +4,7 @@ using PrecompilePlutoCourse
 
 function __init__()
     PrecompilePlutoCourse.configure(@__MODULE__,
-                                    packages = [:Demo, :Distributions])
+                                    packages = [])
 end
 
 end # module
