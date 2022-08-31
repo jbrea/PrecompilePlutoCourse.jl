@@ -1,9 +1,9 @@
-using Pkg
+using Pkg, Logging
 Pkg.activate(joinpath(@__DIR__, ".."))
 
 using Pluto
 
-redirect_stdout(Pipe()) do
+with_logger(SimpleLogger(Logging.Warn)) do
 
 session = Pluto.ServerSession()
 session.options.server.port = 40404

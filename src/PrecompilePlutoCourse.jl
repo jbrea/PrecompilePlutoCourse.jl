@@ -9,7 +9,7 @@ Base.@kwdef struct Configuration
     sysimage_path::String = joinpath(project_path, "precompile", "$(lowercase(string(project_module))).so")
     start_notebook::String = joinpath(project_path, "index.jl")
     warmup_file::String = joinpath(project_path, "precompile", "warmup.jl")
-    packages::Vector{Symbol} = []
+    packages = nothing
     kwargs = NamedTuple()
 end
 
