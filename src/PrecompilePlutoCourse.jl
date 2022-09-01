@@ -1,5 +1,6 @@
 module PrecompilePlutoCourse
 using Git, Pluto, Distributed, PackageCompiler
+using Pkg.Artifacts
 export start, stop, update, create_sysimage
 
 
@@ -7,6 +8,7 @@ Base.@kwdef struct Configuration
     project_module::Module = @__MODULE__
     project_path::String = pkgdir(project_module)
     sysimage_path::String = joinpath(project_path, "precompile", "$(lowercase(string(project_module))).so")
+    sysimage_artifact = nothing
     start_notebook::String = joinpath(project_path, "index.jl")
     warmup_file::String = joinpath(project_path, "precompile", "warmup.jl")
     packages = nothing
@@ -28,7 +30,11 @@ end
 function start()
     assert_config()
     exeflags = ["--project=$(_CONFIG[].project_path)"]
-    sysimg = _CONFIG[].sysimage_path
+    if isnothing(_CONFIG[].sysimage_artifact)
+        sysimg = _CONFIG[].sysimage_path
+    else
+        sysimg = _CONFIG[].sysimage_artifact
+    end
     isfile(sysimg) && push!(exeflags, "--sysimage=$sysimg")
     pid = Distributed.addprocs(1, exeflags = exeflags) |> first
     expr = :(using Pluto; Pluto.run(notebook = $(_CONFIG[].start_notebook),

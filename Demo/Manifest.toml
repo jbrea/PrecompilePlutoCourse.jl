@@ -107,6 +107,7 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
 [[deps.DelimitedFiles]]
 deps = ["Mmap"]
+git-tree-sha1 = "19b1417ff479c07e523fcbf2fd735a3fde3d1ab3"
 uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 
 [[deps.DensityInterface]]
@@ -453,7 +454,7 @@ version = "0.7.39"
 deps = ["Distributed", "Git", "PackageCompiler", "Pkg", "Pluto"]
 path = ".."
 uuid = "031ef55e-ae57-4a95-aa50-04a4c1cc4953"
-version = "0.1.0"
+version = "0.2.1"
 
 [[deps.PrecompileSignatures]]
 git-tree-sha1 = "18ef344185f25ee9d51d80e179f8dad33dc48eb1"
