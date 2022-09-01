@@ -30,9 +30,8 @@ end
 function start()
     assert_config()
     exeflags = ["--project=$(_CONFIG[].project_path)"]
-    if isnothing(_CONFIG[].sysimage_artifact)
-        sysimg = _CONFIG[].sysimage_path
-    else
+    sysimg = _CONFIG[].sysimage_path
+    if !isfile(sysimg) && !isnothing(_CONFIG[].sysimage_artifact)
         sysimg = _CONFIG[].sysimage_artifact
     end
     isfile(sysimg) && push!(exeflags, "--sysimage=$sysimg")
