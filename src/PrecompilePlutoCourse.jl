@@ -59,10 +59,9 @@ function update()
     if !isempty(readlines(`$(git()) diff --cached`))
         run(`$(git()) -c user.name="student" -c user.email="student@mlcourse" commit -m "automatic commit of local changes"`)
     end
-    run(`$(git()) pull -s recursive -X patience -X ours -X ignore-all-space --no-edit`)
+    run(`$(git()) -c user.name="student" -c user.email="student@mlcourse" pull --rebase=false -s recursive -X patience -X ours -X ignore-all-space --no-edit`)
     if !isempty(read(`$(git()) diff HEAD^ --name-only Manifest.toml`, String))
         Pkg.instantiate()
-        PrecompilePlutoCourse.create_sysimage()
     end
     cd(current_dir)
 end
