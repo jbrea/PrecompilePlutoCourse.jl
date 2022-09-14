@@ -1,5 +1,5 @@
 module PrecompilePlutoCourse
-using Git, Pluto, Distributed, PackageCompiler
+using Git, Pluto, Distributed, PackageCompiler, Pkg
 using Pkg.Artifacts
 export start, stop, update, create_sysimage
 
