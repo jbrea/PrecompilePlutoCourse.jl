@@ -37,7 +37,7 @@ function start(; sysimage = isfile(_CONFIG[].sysimage_path) ? _CONFIG[].sysimage
                                     workspace_use_distributed = false,
                                     dismiss_update_notification = true))
     @async Distributed.remotecall_eval(Main, [pid], expr)
-    println("Starting a Pluto notebook in your browswer.
+    println("Starting a Pluto notebook in your browser.
 Please use `$(nameof(_CONFIG[].project_module)).stop()` to interrupt the Pluto notebook server.")
 end
 
