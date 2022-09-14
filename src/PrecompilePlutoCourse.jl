@@ -27,14 +27,11 @@ function configure(project_module; kwargs...)
     _CONFIG[] = Configuration(; project_module, kwargs...)
 end
 
-function start()
+function start(; sysimage = isfile(_CONFIG[].sysimage_path) ? _CONFIG[].sysimage_path :
+                            isfile(_CONFIG[].sysimage_artifact) ? _CONFIG[].sysimage_artifact : "")
     assert_config()
     exeflags = ["--project=$(_CONFIG[].project_path)"]
-    sysimg = _CONFIG[].sysimage_path
-    if !isfile(sysimg) && !isnothing(_CONFIG[].sysimage_artifact)
-        sysimg = _CONFIG[].sysimage_artifact
-    end
-    isfile(sysimg) && push!(exeflags, "--sysimage=$sysimg")
+    !isnothing(sysimage) && isfile(sysimage) && push!(exeflags, "--sysimage=$sysimage")
     pid = Distributed.addprocs(1, exeflags = exeflags) |> first
     expr = :(using Pluto; Pluto.run(notebook = $(_CONFIG[].start_notebook),
                                     workspace_use_distributed = false,
