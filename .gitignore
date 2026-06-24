@@ -1,0 +1,6 @@
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.so
+/deps/deps.jl
+/docs/build
